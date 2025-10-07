@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "vercel-nodejs@4.0.0"
-    }
-  },
+  "builds": [
+    { "src": "api/index.js", "use": "@vercel/node@2.9.10" }
+  ],
   "routes": [
-    { "src": "/favicon\\.(ico|png)", "dest": "/api/index.js" },
-    { "src": "/(.*)", "dest": "/api/index.js" }
+    { "src": "/favicon\\.(ico|png)", "dest": "api/index.js" },
+    { "src": "/(.*)", "dest": "api/index.js" }
   ]
 }
