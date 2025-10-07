@@ -1,9 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.js": { "runtime": "nodejs20.x" },
-    "api/**/*.js": { "runtime": "nodejs20.x" }
-  },
   "routes": [
     { "src": "/favicon\\.(ico|png)", "dest": "/api/index.js" },
     { "src": "/(.*)", "dest": "/api/index.js" }
