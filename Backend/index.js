@@ -113,5 +113,19 @@ ${message}
   }
 });
 
+// Health and root routes to prevent 404s on GET /
+app.get("/", (req, res) => {
+  res.status(200).send("Backend is running");
+});
+
+app.get("/favicon.ico", (req, res) => {
+  res.status(204).end();
+});
+
+// Only start a server when not running on Vercel. On Vercel we export the app.
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Backend running on http://localhost:${PORT}`));
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => console.log(`🚀 Backend running on http://localhost:${PORT}`));
+}
+
+export default app;
