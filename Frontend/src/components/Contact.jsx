@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../styles/Contact.css';
 
-const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5000";
-
 const Contact = () => {
   const formRef = useRef(null);
   const [values, setValues] = useState({
@@ -58,7 +56,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE}/api/contact`, {
+      const response = await fetch("https://arpit-patidar-portfolio-updated-zwy.vercel.app/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -190,4 +188,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
