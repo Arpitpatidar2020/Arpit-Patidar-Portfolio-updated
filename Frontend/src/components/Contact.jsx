@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import '../styles/Contact.css';
 
+const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5000";
+
 const Contact = () => {
   const formRef = useRef(null);
   const [values, setValues] = useState({
@@ -56,7 +58,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${API_BASE}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -188,3 +190,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
