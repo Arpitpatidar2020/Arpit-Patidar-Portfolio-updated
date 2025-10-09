@@ -60,4 +60,32 @@
   }
 }
 
+/* Special case: Mobile devices with 'Desktop site' enabled
+   Increase footer text size for better readability */
+@media (hover: none) and (pointer: coarse) and (min-width: 900px) {
+  .footer .abc {
+    font-size: 18px; /* larger text in footer */
+    line-height: 1.6;
+  }
+  .footer-iconTop {
+    width: 70px;
+    height: 70px;
+    font-size: 4rem;
+  }
+}
+
+/* Fallback for browsers exposing only any-hover/any-pointer */
+@media (any-hover: none) and (any-pointer: coarse) and (min-width: 900px) {
+  .footer .abc {
+    font-size: 4rem;
+    line-height: 1.6;
+  }
+  .footer-iconTop {
+    width: 70px;
+    height: 70px;
+    font-size: 4rem;
+  }
+ 
+}
+
 

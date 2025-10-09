@@ -226,3 +226,37 @@ h2 > span {
         padding: .45rem .8rem;
     }
 }
+
+/* Special case: Mobile devices with 'Desktop site' enabled
+   Force Interests & Hobbies grid to single column even on wide viewport. */
+@media (hover: none) and (pointer: coarse) and (min-width: 900px) {
+    .interests-grid {
+        grid-template-columns: 1fr;
+        max-width: 1280px; /* allow wider single-column card */
+        gap: 5.4rem; /* more space between the three cards */
+    }
+
+    /* Bigger typography for desktop-site on mobile */
+    .interest-card {
+        padding: 2.6rem; /* bigger box */
+    }
+    .interest-card__title {
+        font-size: 3.8rem; /* bigger title */
+    }
+    .chip {
+        font-size: 2.8rem; /* bigger chip text */
+        padding: 1rem 1.6rem;
+    }
+    .about-content p{
+        font-size: 2.6rem;
+    }
+    .about-content h3{
+        font-size: 3.6rem;
+    }
+    .about-content .btn{
+        font-size: 3.6rem;
+    }
+    .interest-card__icon{
+        font-size: 3.1rem;
+    }
+}

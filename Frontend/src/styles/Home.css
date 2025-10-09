@@ -154,3 +154,24 @@ animation: animateWords 5s infinite ease;
     75% {transform: translateY(-300%);}
     100% {transform: translateY(-400%);}
 } */
+/* Special case: Mobile devices with 'Desktop site' enabled — optimize Home */
+@media (hover: none) and (pointer: coarse) and (min-width: 900px) {
+    .home { padding: 70px 3% 0; }
+    .home-content { max-width: 1200px; }
+    .home-content h1 { font-size: 6rem; line-height: 1.18; }
+    .home-content h3 { font-size: 3.8rem; }
+    .home-content p { font-size: 2.6rem; }
+    .social-media a { width: 70px; height: 70px; font-size: 28px; margin: 36px 18px 36px 0; }
+    .home .btn { font-size: 2.2rem; padding: 1.8rem 3.2rem; }
+}
+
+/* Fallback: some browsers expose only any-hover/any-pointer — optimize Home */
+@media (any-hover: none) and (any-pointer: coarse) and (min-width: 900px) {
+    .home { padding: 70px 3% 0; }
+    .home-content { max-width: 1200px; }
+    .home-content h1 { font-size: 9rem; line-height: 1.18; }
+    .home-content h3 { font-size: 4.8rem; }
+    .home-content p { font-size: 3.6rem; }
+    .social-media a { width: 80px; height: 80px; font-size: 45px; margin: 36px 18px 36px 0; }
+    .home .btn { font-size: 3.2rem; padding: 1.8rem 3.2rem; }
+}

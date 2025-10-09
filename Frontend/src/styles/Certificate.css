@@ -6,7 +6,7 @@
 .heading {
   font-size: 2.5rem;
   margin-bottom: 6rem;
- margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .heading span {
@@ -149,12 +149,49 @@
     width: 100%;
     height: auto; /* fluid image */
   }
-
   .certificate .box .content h2 {
     font-size: 1.3rem;
   }
-
   .certificate .box .content p {
     font-size: 0.95rem;
   }
+}
+
+/* Special case: Mobile devices with 'Desktop site' enabled
+   Detect via touch capabilities + wider viewport.
+   This slightly enlarges certificates on such devices only. */
+@media (hover: none) and (pointer: coarse) and (min-width: 900px) {
+  .certificates-container {
+    grid-template-columns: 1fr; /* make each card take full row for larger size */
+    gap: 3.2rem;
+  }
+  .certificate .box {
+    max-width: 1100px; /* allow larger preview width */
+  }
+  .certificate {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .heading {
+    font-size: 5.5rem;
+  }
+  /* Enlarge overlay text (ID and Title) and padding */
+  .certificate .box .content { padding: 1.2rem 1.6rem; }
+  .certificate .box .content h2 { font-size: 3rem; }
+  .certificate .box .content p { font-size: 2rem; }
+  
+}
+
+/* Fallback: some browsers expose only any-hover/any-pointer — mimic mobile with Desktop site */
+@media (any-hover: none) and (any-pointer: coarse) and (min-width: 900px) {
+  .certificates-container {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+  .certificate .box { max-width: 1100px; }
+  .certificate { padding-left: 5%; padding-right: 5%; }
+  .heading { font-size: 5.5rem; }
+  .certificate .box .content { padding: 1.2rem 1.6rem; }
+  .certificate .box .content h2 { font-size: 3rem; }
+  .certificate .box .content p { font-size: 2rem; }
 }

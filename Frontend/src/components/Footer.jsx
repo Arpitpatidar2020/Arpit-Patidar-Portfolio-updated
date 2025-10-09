@@ -3,17 +3,12 @@ import '../styles/Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const handleBackToTop = (event) => {
-    event.preventDefault();
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
+  // Back-to-top navigates to the #top anchor for accessibility and native behavior
 
   return (
     <footer className="footer">
       <div className="footer-iconTop">
-        <a href="#" aria-label="Back to top" onClick={handleBackToTop}>
+        <a href="#top" aria-label="Back to top">
           <i className="fa-solid fa-arrow-up"></i>
         </a>
       </div>

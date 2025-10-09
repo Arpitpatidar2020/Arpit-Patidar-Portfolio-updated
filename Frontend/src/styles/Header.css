@@ -166,3 +166,23 @@
     margin: 0;
   }
 }
+
+/* Special case: Mobile devices with 'Desktop site' enabled — make header larger */
+@media (hover: none) and (pointer: coarse) and (min-width: 900px) {
+  .header { height: 90px; padding: 0 1.5rem; }
+  .logo { font-size: 3.2rem; letter-spacing: 5px; }
+  .navbar { gap: 28px; }
+  .navbar a { font-size: 2.2rem; padding: 10px 10px; }
+  .navbar i { font-size: 1.2em; margin-right: 0.6rem; }
+  .underline::before { height: 2px; }
+}
+
+/* Fallback: some browsers expose only any-hover/any-pointer */
+@media (any-hover: none) and (any-pointer: coarse) and (min-width: 900px) {
+  .header { height: 90px; padding: 0 1.5rem; }
+  .logo { font-size: 3.2rem; letter-spacing: 5px; }
+  .navbar { gap: 28px; }
+  .navbar a { font-size: 2.2rem; padding: 10px 10px; }
+  .navbar i { font-size: 1.2em; margin-right: 0.6rem; }
+  .underline::before { height: 2px; }
+}

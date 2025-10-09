@@ -27,6 +27,10 @@ html {
     html {
         scroll-padding-top: 50px; /* match mobile header height */
     }
+    /* Adjust section padding under smaller header on mobile */
+    section {
+        padding: calc(var(--header-height-mobile) + 2.5rem) 9% 4rem;
+    }
 }
 
 body {
@@ -68,8 +72,10 @@ html, body, #root {
 }
 
 section {
-    min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    /* Let content decide the height to avoid big empty gaps */
+    min-height: auto;
+    /* Add top padding based on fixed header height */
+    padding: calc(var(--header-height) + 3rem) 9% 4rem;
 }
 
 /* Scroll reveal base states */

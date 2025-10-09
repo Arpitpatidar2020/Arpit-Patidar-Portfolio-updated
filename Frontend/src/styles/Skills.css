@@ -4,6 +4,25 @@
     background: var(--second-bg-color);
 }
 
+/* Fallback: some browsers expose only any-hover/any-pointer in Desktop Site mode */
+@media (any-hover: none) and (any-pointer: coarse) and (min-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* single column */
+        max-width: 1280px;
+        gap: 5.4rem;
+    }
+    .skill-card {
+        padding: 2.6rem 2.6rem 2.8rem;
+        border-radius: 18px;
+    }
+    .skill-card__header { gap: 1.4rem; margin-bottom: 1.4rem; }
+    .skill-card__icon { width: 50px; height: 50px; font-size: 1.9rem; }
+    .skill-card__title { font-size: 2.6rem; }
+    .pill-list { gap: 1rem; }
+    .pill { font-size: 1.6rem; padding: .8rem 1.2rem; }
+    .bullet-list li { font-size: 1.8rem; }
+}
+
 .skills h2 {
     margin-bottom: 5rem;
 }
@@ -111,7 +130,6 @@
 
 @media (max-width: 600px) {
     .skill-card {
-        padding: 1.2rem 1.2rem 1.4rem;
         border-radius: 14px;
     }
     .skill-card__icon {
@@ -126,7 +144,75 @@
         font-size: 1.25rem;
         padding: .5rem .8rem;
     }
-    .bullet-list li {
-        font-size: 1.4rem;
+    .bullet-list li { font-size: 1.4rem; }
+}
+
+/* Special case: Mobile devices with 'Desktop site' enabled */
+@media (hover: none) and (pointer: coarse) and (min-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr !important; /* force single column */
+        max-width: 1280px;
+        gap: 5.4rem !important; /* bigger gaps */
     }
+    .skill-card {
+        padding: 2.6rem 2.6rem 2.8rem !important; /* bigger box */
+        border-radius: 18px;
+    }
+    .skill-card__header { gap: 1.4rem; margin-bottom: 1.4rem; }
+    .skill-card__icon { width: 50px; height: 50px; font-size: 1.9rem; }
+    .skill-card__title { font-size: 2.6rem; }
+    .pill-list { gap: 1rem; }
+    .pill { font-size: 1.6rem; padding: .8rem 1.2rem; }
+    .bullet-list li { font-size: 1.8rem; }
+}
+
+/* Fallback: some browsers expose only any-hover/any-pointer in Desktop Site mode */
+@media (any-hover: none) and (any-pointer: coarse) and (min-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 1280px;
+        gap: 5.4rem !important;
+    }
+    .skill-card {
+        padding: 2.6rem 2.6rem 2.8rem !important;
+        border-radius: 18px;
+    }
+    .skill-card__header { gap: 1.4rem; margin-bottom: 1.4rem; }
+    .skill-card__icon { width: 50px; height: 50px; font-size: 1.9rem; }
+    .skill-card__title { font-size: 2.6rem; }
+    .pill-list { gap: 1rem; }
+    .pill { font-size: 1.6rem; padding: .8rem 1.2rem; }
+    .bullet-list li { font-size: 1.8rem; }
+}
+
+/* Special case: Mobile devices with 'Desktop site' enabled
+   Make Skills section behave like mobile: single column, larger fonts and gaps */
+@media (hover: none) and (pointer: coarse) and (min-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* single column */
+        max-width: 1280px;
+        gap: 6.4rem; /* more space between cards */
+    }
+
+    .skill-card {
+        padding: 5rem 5rem 5.2rem; /* bigger box */
+        border-radius: 18px;
+        height: 200px;
+       
+    }
+    .skill-card__header { gap: 1.4rem; margin-bottom: 1.4rem; }
+    .skill-card__icon {
+        width: 50px;
+        height: 50px;
+        font-size: 3.1rem;
+    }
+    .skill-card__title {
+        font-size: 3.6rem; /* bigger title */
+    }
+    .pill-list { gap: 1rem; }
+    .pill {
+        font-size: 2.6rem; /* bigger pill text */
+        padding: .8rem 1.2rem;
+    }
+    .bullet-list li { font-size: 2.8rem; }
 }

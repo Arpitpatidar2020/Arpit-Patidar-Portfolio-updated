@@ -63,13 +63,6 @@ h1 > span {
     font-weight: bold;
 }
 
-  
-
-
-
-
-
-
 
 .box img{
     width: 100%;
@@ -156,8 +149,37 @@ h1 > span {
       height: 200px; /* smaller image height on mobile */
     }
   }
+
+  /* Special case: Mobile devices with 'Desktop site' enabled — mimic mobile view */
+  @media (hover: none) and (pointer: coarse) and (min-width: 900px) {
+    .education .box-container { flex-direction: column; align-items: center; width: 95%; max-width: 110rem; margin: 0 auto; padding: 0 1rem; }
+    .education .box-container .box { flex-direction: column; width: 100%; }
+    .education .box-container .box .image,
+    .education .box-container .box .content { flex: 1 1 auto; width: 100%; }
+    .education .box-container .box img { height: 550px; }
+    /* Enhanced typography for readability on mobile using desktop site */
+    .education .box-container .box .content h3 { font-size: 2.8rem; }
+    .education .box-container .box .content p { font-size: 2.7rem; }
+    .education h4 { font-size: 2.2rem; }
+    .education .quote { font-size: 2.2rem; }
+    
+  }
+
+  /* Fallback: some browsers expose only any-hover/any-pointer — mimic mobile view */
+  @media (any-hover: none) and (any-pointer: coarse) and (min-width: 900px) {
+    .education .box-container { flex-direction: column; align-items: center; width: 95%; max-width: 110rem; margin: 0 auto; padding: 0 1rem; }
+    .education .box-container .box { flex-direction: column; width: 100%; }
+    .education .box-container .box .image,
+    .education .box-container .box .content { flex: 1 1 auto; width: 100%;}
+    .education .box-container .box img { height: 550px; }
+    .education .box-container .box .content h3 { font-size: 3.8rem; }
+    .education .box-container .box .content p { font-size: 2.7rem; }
+    .education h4 { font-size: 3.2rem; }
+    .education .quote { font-size: 3.2rem; }
+   
+  }
   .education .box-container .box .content h3 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: #012970;
     padding: 0.5rem 0;
     font-weight: 600;
@@ -165,12 +187,12 @@ h1 > span {
     margin-left: 1rem;
   }
   .education .box-container .box .content p {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin-left: 1rem;
     text-align: left;
   }
   .education h4 {
-    font-size: 2rem;
+    font-size: 2.8rem;
     color: rgb(34, 109, 0);
     text-align: left;
     margin: 1rem;

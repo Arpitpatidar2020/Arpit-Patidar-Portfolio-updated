@@ -16,6 +16,7 @@ function AppInner() {
   useScrollRevealSR(location.pathname);
   return (
     <div className="app-shell">
+      <div id="top" />
       <ScrollToTop />
       <Header />
       <main className="main-content">
